@@ -46,7 +46,7 @@ decode = map(chr.bin2int.checkAndDropParityBit).chop9
 
 
 channel :: [Bit]->[Bit]
-channel = id
+channel = tail 
 
 transmit :: String -> String
 transmit = decode.channel.encode
