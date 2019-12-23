@@ -1,8 +1,13 @@
-data Nat = Zero | Succ Nat
+data Nat = Zero | Succ Nat deriving Show
+
+
 nat2int :: Nat -> Int
 nat2int Zero = 0
 nat2int(Succ n) = 1+nat2int n
 
+int2nat :: Nat -> Int
+int2nat 0 = Zero
+int2nat n = Succ(int2nat (n-1))
 
 data List a = Nil | Cons a (List a) deriving Show
 len :: List a -> Int
